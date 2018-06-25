@@ -7,7 +7,7 @@ const CarCard = props => (
             <a onClick={() => props.selectCar(props.name)} 
                 className={props.curScore === 0 ? "style_prevu_kit style_prevu_kit_ex" : "style_prevu_kit"}
             >
-                <img alt={prname} src={props.image} />
+                <img alt={props.name} src={props.image} />
             </a>
         </div>
     </div>
