@@ -25,8 +25,8 @@ class App extends Component {
         }
     }
 
-    selectCar = breed => {
-        const findCar = this.state.unselectedCars.find(item => item.breed === breed);
+    selectCar = name => {
+        const findCar = this.state.unselectedCars.find(item => item.name === name);
 
         if(findCar === undefined) {
             // failure to select a new car
@@ -40,7 +40,7 @@ class App extends Component {
         }
         else {
             // success to select a new car
-            const newCars = this.state.unselectedCars.filter(item => item.breed !== breed);
+            const newCars = this.state.unselectedCars.filter(item => item.name !== name);
             
             this.setState({ 
                 message: "You guessed correctly!",
@@ -65,7 +65,7 @@ class App extends Component {
                 {
                     this.state.cars.map(car => (
                         <CarCard
-                            breed={car.breed}
+                            name={car.name}
                             image={car.image}
                             selectCar={this.selectCar} 
                             curScore={this.state.curScore}
